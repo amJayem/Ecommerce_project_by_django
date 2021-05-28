@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4qd3)s(m%l*2%j^4fzxzoz3)su*2$7s@11b4#ot+l-_asxw-6j'
+SECRET_KEY = 'django-insecurddde-4qd3)s(m%l*2%j^4fzxzoz3)su*2$7s@11b4#ot+l-_asxw-6j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop',
+    'shop.apps.ShopConfig', # from apps
 ]
 
 MIDDLEWARE = [
@@ -130,16 +130,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'static_cdn'))
+
+MEDIA_ROOT = os.path.join(os.path.join(BASE_DIR, 'media_cdn'))

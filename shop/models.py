@@ -6,6 +6,7 @@ class Category(models.Model):
     image = models.FileField(null=True,blank=True)
     name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
+    parent = models.SmallIntegerField(null=True)
     publication_status = models.BooleanField()
     
     def __str__(self):
